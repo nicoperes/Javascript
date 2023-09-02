@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+</head>
+<body>
+    <h1>Sistema de Imigração</h1>
+    <p>Sua Nacionalidade: <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="OK" onclick="confirmar()">
+    <div id="res"></div>
+    <script>
+    function confirmar() {
+        var txtnac = document.querySelector("input#txtnac") // Conectar com a <div> do texto
+        var res = document.querySelector("div#res")
+        var nac = txtnac.value.toUpperCase() // .toUpperCase() transforma a string toda em caixa alta, neste caso se o usuário digitar qualquer texto a variável vai se tornar ASSIM, tornando mais fácil o reconhecimento das condições da função que conjulgar.
+        res.innerHTML = `<p>Você se identifica como/de <strong>${nac}</strong>!</p>`
+        if (nac == "BRASIL" || nac == "BRASILEIRO" || nac == "BRASILEIRA") { // variável nac em CAIXA ALTA! //Operador de disjunção utilizado em cadeia (3 valores sendo testados)
+            res.innerHTML += `Você é brasileiro nato, pode seguir adiante!`
+        } else {
+            res.innerHTML += `Você é estrangeiro, deverá se apresentar na cabine mais próxima para mais informações!`
+        }
+    }
+    </script>
+</body>
+</html>

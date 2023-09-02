@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DENOVO...</title>
+    <style>
+        div#area {
+            font: normal 10pt Arial;
+            background-color: rgb(5, 201, 64);
+            color:rgb(10, 88, 36);
+            width: 200px; /* LARGURA */
+            height: 200px; /* ALTURA */
+            line-height: 200px; /* ALTURA DO TEXTO */
+            text-align: center; /* ALINHAMENTO DO TEXTO: CENTRO*/
+        }
+    </style>
+
+</head>
+<body>
+    <div id="area"> <!--DECLARANDO A ID PARA FUNÇÕES-->
+        <strong>BLOCO DO MONARK</strong>
+    </div>
+
+    <script>
+        document.getElementById('area').addEventListener('click', clicar) // ID + CONECTAR EVENTO (NESSE CASO ENVOLVENDO O MOUSE) COM UMA FUNÇÃO
+        document.getElementById('area').addEventListener('mouseenter', entrar)
+        document.getElementById('area').addEventListener('mouseout', sair)
+
+        function clicar() { // FUNÇÃO DO EVENTO RELACIONADO
+            document.getElementById('area').innerHTML = 'CHAPOU'
+        }
+
+        function entrar() {
+            document.getElementById('area').innerHTML = 'FUMOU'
+        }
+
+        function sair() {
+            document.getElementById('area').innerHTML = 'PASSOU'
+        }
+    </script>
+</body>
+</html>

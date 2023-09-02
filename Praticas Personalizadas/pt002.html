@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício DOM</title>
+    <style>
+    body {
+        background-color: rgb(30, 129, 124);
+        color: rgb(192, 162, 240);
+        font: normal 12pt Arial;
+    } 
+
+    input { /* É NECESSÁRIO DEFINIR ESTILO DAS BOXES INPUT */
+    font: normal 10pt Arial;
+    width: 100px
+    }
+
+    div#res{ /* ESTILIZAR DIV COM ID "res" */
+        margin-top: 50px;
+    }
+
+    </style>
+</head>
+<body>
+    <h1>PRATICANDO E TESTES</h1>
+    <input type="number" name="txtn1" id="txtn1"> <!-- BOXES PARA DIGITAR O NÚMERO-->
+    +
+    <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="SOMAR" onclick="somar()"> <!-- RELACIONAR O BOTÃO "SOMAR" COM FUNÇÃO DO MESMO NOME AO CLICKAR (onclick=" ")-->
+    <div id="res"></div>
+
+    <script>
+        function somar() {
+            var tn1 = document.getElementById('txtn1') // RELACIONANDO AS VARIÁVEIS COM AS DIV'S
+            var tn2 = document.getElementById('txtn2')
+            var res = document.getElementById('res') // DIV QUE VAI APRESENTAR O RESULTADO DO CÁLCULO
+            var n1 = Number(tn1.value) // TRANSFORMAR EM NUMBER A VARIÁVEL PARA SER CALCULÁVEL
+            var n2 = Number(tn2.value)
+            var s = n1 + n2 // EQUAÇÃO
+            res.innerHTML = `O resultado é ${s}` // innerHTML PARA EDITAR O TEXTO DA DIV APRESENTANDO O RESULTADO
+        }
+    </script>
+</body>
+</html>

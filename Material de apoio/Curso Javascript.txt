@@ -1,0 +1,674 @@
+=====================================================================
+Anotações do Curso Javascript (por Curso em Video)
+=====================================================================
+
+Aula #02 - Introdução
+
+1 - Sabe a diferença entre um cliente e um servidor para Internet?
+    R: Cliente é o acesso na qual se que utiliza o serviço provido pelo servido, na qual possui tecnologia própria para isso;
+       Servidor é onde está armazenado os dados que poderá ser solicitado por um cliente para exibir seu/algum conteúdo através da WEB, possui Hardware como também OS próprio.
+
+2 - Para que serve HTML, CSS e Javascript?
+    R: HTML - Construção mais básico de um website, define o conteúdo textual (parágrafos, cabeçalhos, título, etc) e a exibição de mídia (imagem ou vídeo);
+       CSS  - Usado para estilizar o website, por exemplo: como o contéudo textual vai ser formatado, como também sua fonte e a cor dos elementos que o compõe;
+       J.S. - Responsável pela funcionalidade de funções interativas e mais complexas do website, por exemplo: mapas interativos, gráficos 2D/3D, controlar multimídias, etc.
+
+3 - Cite 4 sites que usam Javascript.
+    R: Google, Youtube, Instagram, Twitch...
+
+=====================================================================
+
+Aula #03 - Guias de Leitura e Programas Recomendados
+
+1 - Sabe que empresa criou o Javascript?
+    R: A empresa Netscape, na qual depois de ter falido por causa do Internet Explorer ser implantado no Windows, se tornou a fundação Mozilla (criador do navegador Mozilla Firefox).
+
+2 - Java e JavaScript possuem alguma relação?
+    R: Somente que foram linguagens que derivaram da linguagem "C", entretanto não possuem semelhança no quesito de linguagem (somente alguns comandos), sendo línguas totalmente diferentes.
+
+3 - O que ECMAScript tem a ver com JavaScript?
+    R: ECMAScript é a versão da linguagem padronizada do JavaScript, na qual todas empresas utilizam em comum.
+
+#
+
+Recomendações de livros:
+"Javascript: O Guia Definitivo" (David Flanagan); 
+"Javascript - Guia do Programador" (Maurício Samy Silva);
+"Guia de Referência" (Mozilla); 
+"Guia de Referência" (ECMA);
+
+Programas utilizados:
+Google Chrome (recomendado)
+Visual Studio Code
+Node.js
+
+=====================================================================
+
+Aula #04 - Criando primeiro script
+
+(...)
+
+2 - Para aprender JS, precisa saber inglês?
+    R: Não necessariamente, pois há muitos recursos atualmente em PT/BR.
+
+(...)
+
+#
+
+Programando primeiro script:
+
+(Dica: Sempre organize as pastas!)
+
+---
+>Criar arquivo html em pasta
+---
+>Utilizar html5 (digitar "html:5" e selecionar sugestão):
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+      
+  </body>
+  </html>
+---
+>O Código html é separado em <body> e <head>;
+---
+>em "<title> digitar o título do texto, ex: 
+<title>Meu primeiro script</title>;
+
+>em <body> é onde fica o texto subjacente;
+
+>para criar título: 
+<h1> (título) </h1>;
+
+>para criar parágrafo: 
+<p> (parágrafo) </p>;
+---
+>para estilizar o texto utilizando CSS (dentro do <head>): 
+<style> (linguagem CSS) </style>
+
+>definir cor do plano de fundo:
+<style>
+   body {
+       background-color: (cor);
+   }
+</style>
+
+>configurar cor da letra: 
+color: (selecionar cor)
+
+>configurar fonte do texto: 
+font: (estilo da fonte) (tamanho) (tipo da fonte)
+        body {
+            background-color: antiquewhite;
+            color: brown;
+            font: normal 25pt Arial;
+        }
+---
+>logo em seguida antes do </body>, pode-se colocar linhas em javascript digitando: 
+<script> (linguagem JS) </script>
+---
+>para criar um alerta ao executar o .html:
+    <script>
+        window.alert('mensagem')
+    </script>
+---
+>para criar uma janela com opção de confirmar: 
+window.confirm('mensagem')
+---
+>para criar uma janela com opção de resposta digitável: 
+window.prompt('mensagem')
+---
+
+=====================================================================
+
+Aula #05 - Variáveis e Tipos Primitivos
+
+(...)
+
+>Criar comentários no seu código: 
+
+// (única linha)
+
+/* 
+(texto com 2 ou mais linhas) 
+*/
+
+---
+>Sempre tentar manter seu script bem comentado para eventuais revisões do futuro!
+---
+>Em JS, o sinal de "=" deve ser interpretado como RECEBE, não como sinal de igual, ex:
+var a1 = carro1 // vaga a1(variável) recebe carro1 (atribuição)
+
+>Com a variável "a1" preenchida, se declarar mesmo assim que "a1 = carro2", a variável vai ser substituída pelo mais recente, no caso ficando "a1 = carro2".
+
+>Se desejar não atribuir a variável a nenhum valor, deve-se utilizar a palavra "null", ex:
+var a1 = null
+---
+>O nome de cada variável se denomina IDENTIFICADOR!
+>Pode começar com letra, "$" ou "_";
+>Não pode começar com números;
+>Pode utilizar letras e números;
+>Pode usar acento e símbolos;
+>Não pode conter espaço.
+>Não utilizar nos nomes de variáveis comandos que o JavaScript usa!
+>Letras minúsculas e letras maiusculas tem diferença no JavaScript!
+>Tente usar nomes coerentes para suas variáveis!
+---
+>Tipos Primitivos Primordiais:
+>Números inteiros e reais são representados como tipo de dados "number";
+>Palavras e seriais (entre " ' ou `) são chamados de "string";
+>"true" e "false" são definidos como "boolean";
+
+=====================================================================
+
+Aula #06
+---
+1)O que é uma variável?
+  R: São dados em que são alocados valores que poderão ser utilizados e/ou armazenados nos quais são manipulados pelo software.
+
+2)Diferença de variável numérica real/inteira.
+  R: Variável numérica inteira são números sem casas decimais, inteiros (ex: 10,20,30,256); Real são variáveis que possuem valores "quebrados", com casas decimáis (ex: 1.8, 47.36, 100.99)
+
+3)Tipos primitivos de JS.
+  R: Numbers: variáveis numéricas
+     Strings: variáveis com cadeia de caracteres (ex: João Pedro, CPF: 123.456.789-10, xurrasco_021)
+     Boolean: true/false
+
+4) Significado de "null".
+   R: Que a variável não receberá nenhum valor de dados, se tornará indefinida de qualquer tipo de valor.
+---
+
+>Armazenando valor de uma variável breve e mutável para utilizá-la
+var nome = window.prompt('Qual é o seu nome?') // variável "nome" vai ser o resultado da questão respondida
+window.alert('É um grande prazer te conhecer, ' + nome + '!') // mensagem mutável para variável "nome", com o "!", variável concatenando com o sinal de "+" a mensagem e o sinal de "!" ao lado do nome.
+> (number + number) = adição
+> (string + string) = concatenação
+> O comando "window.prompt" somente define variáveis como String, ou seja, o resultado da soma será somente concatenação, a junção das casas decimais (ex: 5 + 5 = 55)
+> Para ter a possibilidade de somar numéricamente as variáveis é necessário realizar uma conversão de tipos de variável (de String para Number).
+number.parseInt (n) // forçará números inteiros
+number.parseFloat (n) // forçará números reais
+number(n) // qualquer tipo de número
+> Para realizar a conversão de Number para String (caso necessário):
+String(n) // transforma o Number em String
+n.toString(n) // reverte o Number em String
+> Maneira mais prática e organizada de declarar multiplas variáveis em um código utilizando a técnica mais recente de "TemplateString"
+`O aluno ${nome} com ${idade} anos tirou ${nota}` // UTILIZASSE A CRASE( ` ), não o acento ( ´ )
+> Para revisar, até agora:
+var s = 'JavaScript'
+'Estou aprendendo s' // não faz interpolação
+'Estou aprendendo' + s // faz concatenação
+`Estou aprendendo $(s)` // usa template string
+> Outros Comandos:
+s.length // conta quantos caracteres a string possui
+s.toUpperCase() // tudo para 'MAIÚSCULAS'
+s.toLowerCase() // tudo para 'minúsculas'
+> Formantando Numbers:
+n1.toFixed(2) // Vai forçar exibir duas casas decimais, ex: de 15.9 vai para 15.90
+n1.replace('.', ',') // Vai transformar gramaticamente o ponto em vírgula, ex: 15.9 vai para 15,9
+n1.toFixed(2).replace('.', ',') // combina os 2 tipos
+> Em uma situação hipotética, caso queira representar o salário de uma pessoa com o valor da moeda monetária local:
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+
+=====================================================================
+
+Aula #07
+
+>Operadores primordiais
+- aritméticos
+- atribuição
+- relacionais
+- lógicos
+- ternário
+>Nesse curso, aprofundamento será em aritméticos e atribuição!
+>Aritméticos:
+- São usados para fazer cálculos matemáticos!
+- "+" = usado para somar (ex: 5+2=7)
+- "-" = '' para subtrair (ex: 5-2=3)
+- "*" = '' para multiplicar (ex:5*2=10)
+- "/" = '' para duvidir (ex:5/2=2.5) // resultado é um número real!
+- "%" = é o resultado matemático no qual o resultado é o restante (no qual deve ser número inteiro) da divisão de 2 produtos, ex: 5/2 vai dar 2.5, mas na primeira divisão da casa 5 com o fator 2 o resultado vai ser 2, 2*2 vai dar 4 e vai sobrar 1 para chegar até 5, então o resultado do cálculo é "1".
+- "**" = é usado para calcular potência (multiplicado por ele mesmo), no caso 5*5=25.
+
+>É necessário ter CUIDADO com os operadores e com a precedência deles!
+>Ordem de precedência dos Operadores Aritméticos
+
+ |   ( )         (ENTRE PARÊNTESES)
+ |   **          (FATOR)
+ |   *   /   %   (MULTIPLICAÇÃO/DIVISÃO/RESTANTE DIVISÃO)
+ |   +   -       (MAIS OU MENOS)
+\|/
+ V
+
+>Exemplos de operações aritméticas:
+var a = 5 + 3 // resultado: a = 8
+var b = a % 5 // resultado: b = 3
+var c = 5 * b ** 2 // resultado: c = 45
+var d = 10 - a / 2 // resultado d = 6
+var e = 6 * 2 / d // resultado e = 2
+var f = b % e + 4 / e //resultado f = 3
+
+>Auto-atribuições: resultados em que a mesma variável se determina dentro de uma expressão aritmética
+var n = 3
+n = n + 4 // resultado: 7
+// antes tava valendo 3, mas com a novo código na linha está valendo 7
+
+> Maneira de encurtar essa auto-atribuição:
+n = 4
+n += 4 // variável "n" irá somar o valor dela junto ao 4, resultado: 8
+n *= 4 // resultado: 16
+n -= 5 // resultado: 8
+...
+
+>Incrementação
+n = 4
+n++ // irá o valor da variável em +1, resultado: 5
+n-- // irá subtrair a variável em -1, resultado: 4
+
+=====================================================================
+
+Aula #08
+
+> Operações Relacionais
+- São usados para relacionar/comparar valores distintos ou iguais!
+- Os resultados são do tipo boolean, 'true' ou 'false'
+> São eles:
+ ">" = maior
+ "<" =  menor
+ ">=" = maior ou igual
+ "<=" = menor ou igual
+ "==" = igual (OBS: o sinal de "=" no JS significa atribuição, para atribuir igualdade deve-se usar "==")
+ "!=" = diferente
+
+> Alguns exemplos com números:
+5 > 2 (true)
+7 < 4 (false)
+8 >= 8 (true)
+9 <= 7 (false)
+5 == 5 (true)
+4 != 4 (false)
+
+> Outros exemplos variáveis:
+preço >= 200.50       // o preço é maior ou igual a 200.50?
+idade < 18            // a idade é menor que 18?
+curso == 'JavaScript' // o curso é JavaScript? (é possível relacionar variáveis tipo String)
+n1 != n2              // a variável "n1" é diferente da variável "n2"?
+
+> Operadores de Identidade
+- São usados para identificar se variáveis são idênticas (podem ou não serem do mesmo tipo ou valor!)
+> Exemplos: 
+5 == 5 // resultado: true
+5 == '5' // resultado: true; pois nesse tipo de operação o JS não identifica qual o tipo da variável e sim o valor dentro dela, então as duas variáveis são iguais
+5 === '5' // resultado: false; nesse tipo de operação se diferencia o tipo da variável, por mais que as duas tenham o mesmo valor, o resultado é negativo pois são tipos diferentes
+5 != '5' // resultado: false; os valores não são indiferentes pois tem o mesmo valor, apesar de serem de tipos diferentes
+5 !== '5' // resultado: true; pois é levado em conta diferenciar o tipo das variáveis, mesmo tendo o mesmo valor (Desigual Restrito)
+
+> Operadores lógicos
+- Trabalham condicionando os tipos de valores das variáveis, com a exceção do "!", são operadores binários em que logicamente operam com dois valores.
+- "!" = Negação
+  Trabalha como um operador único, se o valor for true o resultado vai ser false, e vice-versa.
+- "&&" = Conjunção
+  Vai ser true se os valores forem true/true, se for alguma outra combinação (true/false, false/false, false/true) o resultado irá ser false.
+- "||" = Disjunção
+  Independente se ter os dois valores forem true/true, true/false ou false/true, o resultado vai ser true. O resultado só irá ser false se os valores forem false/false.
+
+> Em uma linha de código calculando valores, a prioridade é realizar as operações na seguinte ordem:
+- Op. Aritméticas > Op. Relacionais > Op. Lógicos
+- Exemplo:
+  var a = 5
+  var b = 8
+  a > b && b % 2 == 0 // primeiro se calcula as op. aritméticas ("a > b" ; "b % 2"), depois op. relacionais ( se o resultado de "b % 2" é "== 0") e logo em seguida os op. lógicos ( ... "&&" ... )
+  // resultado: "a > b" é false, "b % 2 == 0" é true; como "&&" necessita que os 2 resultados sejam true, a resposta é FALSE!
+
+- Exemplo 2 (usando as mesmas variáveis):
+  a <= b || b / 2 == 2
+  // resultado: "a <= b" é true, "b / 2 == 2" é true, a resposta é TRUE, pois o "||" exige que qualquer 1 dos valores seja true.
+
+- Outros Exemplos:
+  idade >= 15 && idade <= 17 // a idade está entre 15 e 17?
+  estado == 'RJ' || estado == 'SP' // a pessoa mora em RJ ou em SP?
+  salario > 1500 && sexo != 'M' // não é um homem com salário acima de 1500?
+
+> Operadores Ternários
+- trabalham com 3 tipos de valores.
+- O operador oferece a opção de definição da variável sob condições impostas sobre ele.
+  "(teste) ? (true) : (false)"
+
+- Exemplo 1:
+  média >= 7 ? 'APROVADO' : 'REPROVADO' // se a média da nota for maior ou igual a 7, o aluno vai ser aprovado, caso a nota for menor que 7, o aluno vai ser reprovado
+ 
+- Exemplo 2:
+  var x = 8 // "x" recebe "8"
+  var res = x % 2 == 0 ? 5 : 9 // a variável "res" resultará em "5" se for igual a "0"; Se não for igual a "0", o resultado é "9".
+
+> Recapitulando - Ordem de Precedência:
+ |   ( )  **   /   ...| (OP ARITMÉTICOS)       1°
+ |    >   <    >=  ...| (OP RELACIONAIS)       2°
+ |   !                | (OP LÓGICO: NEGAÇÃO)   3°
+ |   &&               | (OP LÓGICO: CONJUNÇÃO) 4°
+ |   ||               | (OP LÓGICO: DISJUNÇÃO) 5°
+ |   ?    :           | (OP TERNÁRIO)          6°
+\|/
+ V
+
+=====================================================================
+
+Aula #09
+
+> Introdução ao DOM
+- A sigla D.O.M significa Document Object Model.
+- É um conjunto de objetos dentro do navegador que permite dar acesso a componentes do website. 
+- (Ex: DOM não funciona no Node.js, é funcional somente dentro do navegador usando interação provida pelo JavaScript).
+
+---
+
+> Árvore DOM
+- Para construção de qualquer website, é fundamental construir no que se chama de "Árvore DOM".
+- Como uma árvore figurativa, possui uma raíz na qual se diversifica entre ramos (no qual se atribui a outras funcionalidades envolvidas).
+- A raiz do website dentro do navegador se chama "window", tudo dentro do JS está dentro do objeto "window".
+- A partir do objeto "window", se configura que constitui outros objetos seguintes: "location", "document" e "history";
+- location = responsável por informar qual a localização do site (URL), qual a página atual e também a interior, etc...
+- document = documento atual;
+- history  = guarda a informação das funções de onde o usuário veio e para onde ele vai, etc...
+- esses objetos possui vários objetos na qual se ramificam nessa árvore que funciona hierarquicamente.
+
+            window
+         /     |     \
+location   document   history
+               |
+              html
+            /     \
+         head     body
+     /     |       |
+   meta   title    |
+                   |
+                   |
+          /     |     |     \
+         h1     p     p     div
+                      |
+                    strong
+
+(...)      (...)      (...)      (...)
+
+- É necessário ter em mente sobre o conceito da funcionalidade dessa árvore e traçar figuramente para organizar.
+- Exemplo:
+window.document.write('Olá Mundo!') // em cada objeto citado, está sendo utilizada uma das várias possibilidades de conjurar uma funcionalidade de cada objeto; Neste caso, é acessada essa funcionalidade por esse direcionamento do objeto fundamental desse comando (window) se ramificando entre outros objetos advindos por ordem respectiva (document -> write).
+
+---
+
+> Selecionando Elementos da Árvore DOM
+- A tag <div> serve para alterar o estilo em partes específicas da página e posicionar objetos.
+- Cada objeto citado pode ser chamado por elementos também, e cada um deles pode ser selecionado especificamente igual escrito anteriormente.
+- Existem vários métodos especificos para selecionar os elementos da árvore DOM.
+- Basicamente existem 5 métodos de acesso a estes elementos
+  - Marca:   getElementsByTagName()
+  - ID:      getElementById()
+  - Nome:    getElementsByName()
+  - Classe:  getElementsByClassName()
+  - Seletor: querySelector()
+             querySelectorAll()
+- Comandos em que há a palavra Elements no plural é necessário discernir para algum único usando o "[]", Ex:
+document.getElementsByTagName('p')[1]
+- A método utlizando o Selector é a mais recomendada atualmente pelos manuais por sua praticidade e por ser um método mais novo. Exemplo:
+window.document.querySelector('div#msg').style.color = 'blue' // seleciona o ID da div e altera a cor da fonte em azul
+- OBS: Para selecionar um ID, é necessário conjurar a Hashtag (#), ao contrário de class na qual é o Ponto (.).
+
+=====================================================================
+
+Aula #10
+
+> Eventos DOM
+- Dentro de uma <div>, evento é tudo que possa acontecer para modificar a linha de programação do comando <div>, ou seja, também pode ser com qualquer elemento.
+- Exemplo: Dentro de uma <div> de um site, se eu aproximar o ponteiro do mouse perto da área respectiva, vai acionar o evento "mouseenter";
+  Se eu continuar movendo o ponteiro nesta área, vai ser acionado várias vezes o evento "mousemose;
+  Ao pressionar o botão esquerdo do mouse na área da <div>, será acionado o evento "mousedown";
+  Ao soltar o botão do mouse, irá disparar o evento "mouseup"
+  E, ao pressionar e soltar imediatamente, acionará o evento "click"
+  Ao afastar o cursor pra fora da área <div>, será acionado o evento "mouseout"
+
+> Funções
+- São linhas de códigos de programação que serão executadas somente quando um evento específico ocorrer.
+- Essas linhas devem ser organizadas dentro de um BLOCO.
+- Para organizar um bloco dentro de um script:
+  
+  function ação(parâmetros) {
+  
+  // códigos dentro do bloco
+  
+  }
+  
+- O comando function pode contar sendo nomeado ou não (chamados também de funções anônimas), ao ser nomeado (dentro do exemplo é o "ação"), pode ser necessário estabelecer logo em seguida um parâmetro (na qual esse elemento irá ser aprofundado nas aulas seguintes), e por conseguinte, dentro das chaves irá ter o código que irá ser ativado quando uma função for solicitada.
+
+=====================================================================
+
+Aula #11
+
+> Condições em JS (part.1)
+- Todos os comandos dos script foram executados em forma sequencial, ou seja, para determinar a funcionalidade do seu objetivo proposital, é necessário uma sequência de comandos e códigos para chegar a um resultado, EX:
+va n = 3
+n += 2
+window.alert(n)
+- Por exemplo, é necessário executar a primeira, segunda e terceira e etc. linha para chegar a conclusão.
+- Para executar comandos de modo que eles vão ser ativados somente em casos específicos (sem necessariamente precisar ser sequêncial), deve-se usar as condições!
+- Condição é funcionalmente utilizada para dar um seguimento para diferentes caminhos dentro do script (como se numa estrada a reta por qual estava seguindo ela é terminada no final por 1 ou 2 caminhos na qual deverá escolher). EX:
+
+- Condição Simples:
+if (condição) {
+// código(s) no qual o resultado for true
+}
+
+
+- Condição Composta (2 Escolhas):
+if (condição) {
+// código(s) no qual o resultado for true
+} else {
+// código(s) no qual o resultado é false
+}
+
+
+- Arquivos com final ".js" executam comandos direto pelo programa node.js!
+- console.log() serve para ESCREVER (log) uma MENSAGEM no console.
+- No script (.HTML): Usando o comando "document.querySelector('div...')" para ligar com uma <div> usa-se hashtag(#), com o CSS é com ponto:
+
+document.querySelector('div#exemplo') // = conectar com a <div> do texto
+document.querySelector('div.exemplo') // = conector com a class do <style> (CSS)
+
+=====================================================================
+
+Aula #12
+
+> Condições pt.2
+- Na aula anterior, podemos rever que no conceito de Condições, foi aprendido duas formar de conjugar elas para tratar certo dado(s), mas nem em todos os casos esses tipos de Condições vão ser viáveis.
+- Para isso, uma das outras alternativas além dessas acima, podemos citar a "Condição Aninhada".
+- A condição aninhada seria ter outros comandos do tipo "if {} else {}" dentro de outros "if {} else {}", tornando mais ampliado as variações do tratamento que um ou mais dados poderão ter.
+- o "else if" serve para criar várias condições dentro de outras, por exemplo:
+
+idade = 11
+if (idade < 12) {
+console.log('Você é criança')
+} else if (idade < 18) {
+console.log('Você é adolescente')
+} else if (idade < 60) {
+console.log('Você é adulto')
+} else {
+console.log('Você é idoso')
+}
+
+- O "else if" significa "senão", se o if der falso, ele vai testar o valor no código seguinte no "else if" até algumas opções derem verdadeira, se todas forem false, irá executar o "else" no final
+- Nestas linhas de comando, define-se para cada intervalo de número a um certo resultado, neste caso, cada etapa de idade representa uma identificação etária.
+- Para facilitar o código neste tipo de condição, defina os menores valores dos números primeiro (ou seja, o menor número possível no "if") para facilitar o código.
+
+- Condição Múltipla:
+- Este tipo de condição deve-se usar em condições específicas, ao contrário da Condição Aninhada na qual pode-se usar em todos os tipos de situações.
+- Ela não tem a possibilidade do "true" ou "false", ela tem várias possibilidades em valores fixos.
+- Dentro das possibilidades, o código é testado dentre todas elas para depois retornar seu fluxo normal.
+- Neste tipo de condição, não se é conjugada da mesma maneira que as anteriores estudadas, o comando para se executar esse tipo é o "switch" (no qual não é condição mas sim EXPRESSÃO)
+- Exemplo:
+
+switch (expressão) {
+case valor 1
+// insira código aqui
+break
+
+case valor 2
+// insira código aqui
+break
+
+case valor 3
+// insira código aqui
+break
+
+case valor 4
+// insira código aqui
+break
+
+default:
+// insira código aqui
+break
+}
+
+- OBS: CADA UM DESSES "BREAK"S É ESSENCIAL, NÃO SE DEVE ESQUECER DE CONJULGAR!!!
+- Na expressão dentro do "switch" ela vai ser testada em todos os "case" até achar o valor verdadeiro condizente com ela.
+- Ao achar o resultado, irá pular todos os códigos de linhas antes do "break" do bloco para seguir o caminho depois do fechamento de chaves ({})
+
+=====================================================================
+
+Aula #13
+
+> Repetições
+- Podem ser chamados também de laços ou interações.
+- Podem se assemelhar a condição, pois a repetição oferece a alternativa de testar outro valor.
+- Mas a diferença é que enquanto a repetição for verdadeira, o valor irá voltar para o ponto de partida até o valor se alterar, ou seja, enquanto for "true" o valor vai acumular até mudar a condição no qual o valor se tornará falso, seguindo o restante do caminho.
+- Um dos elementos da repetição é o "while", no qual a tradução para português é "enquanto".
+- While: Testa o valor no início para repeti-lo enquanto verdadeiro
+
+var c = 1
+while (c <= 6) {
+    console.log(`Passo ${c}`)
+    c++ // c = c + 1
+}
+
+- Do While: Executa os valores primeiro para depois testar o valor, enquanto for verdadeiro irá executar os valores do início até se tornar false, seguindo seu caminho.
+
+var c = 1
+do {
+    console.log(`Passo ${c}`)
+    c++ // c = c + 1
+} while (c <= 6)
+
+=====================================================================
+
+Aula #14
+
+> Repetições II
+- Há uma terceira tipo de repetição que se chama "for"
+- Nela, você declara o início, o teste, e o incremento:
+
+  for (início; teste; incremento) {
+  
+  }
+
+- Os comandos entre os blocos vão ser executado enquanto o valor for "true", quando for false, irá sair do bloco e seguir seu caminho.
+- Neste tipo, você define o início o teste e o incremento na mesma linha para depois executar um bloco para em seguida realizar o teste novamente.
+- Nesta aula se aprende a utilizar o modo de depuração do VSCode, na qual tem a opção na seção de "Executar" na barra de cima como também pode habilitar utilizando a tecla "F5".
+- Neste modo, serve para testar certas linhas e comandos do seu programa de modo pragmático, valor por valor, e etc...
+- É muito útil para certificar que seu programa está sendo executado corretamente e descobrir algum erro de modo em que seja mais fácil encontrar.
+
+=====================================================================
+
+Aula #15
+
+> Variáveis Compostas (o tão temido ARRAY/VETORES)
+- Diferente das variáveis simples, que armazenam somente um valor (ex: var c = 5) e que ao armazenar outro valor irá substituir o antigo, variáveis compostas tem a capacidade de armazenar mais de um valor dentro de uma variável.
+- Ao inserir mais de um valor dentro de uma variável composta, ela não irá perder nenhum dos valores anteriores, conservando todos os valores que foram inseridos independentemente.
+- Em cada variável composta, armazena o valor identificando todos por números de índice, ou key(chave).
+- Por exemplo, a variável A possui vários valores armazenados na mesma, eles podem ser identificados por A0, A1, A2, A3, A4, etc. Exemplo:
+
+let num = [5, 8, 4] // valores foram alocados nessas respectivas posições(key) de 0 até 2 (3 valores).
+num[3] = 6 // não existe a key 3 nessa variável(representado pelo num[3]), logo o JS irá inserir o valor em uma nova key.
+num.push(7) // neste comando será adicionado o valor "7" na última key da variável, independente de quantos valores tem armazenados nela.
+num.length // irá exibir quantos valores tem dentro da variável.
+num.sort() // método que irá organizar todos os valores em ordem crescente, neste caso: 4(1), 5(2), 7(3), 8(4).
+num.indexOf(5) // irá pesquisar se há o valor 5. Neste caso, existe.
+num.indexOf(3) // Neste caso, não há o valor 3 dentro da variável, então o JS irá responder "-1" para sinalizar que não existe esse valor.
+
+- A ordem dos comandos influênciam de maneira direta no código. Se, por exemplo, o comando "num.sort()" ser conjugado acima do "num.push(7)", o valor 7 será adicionado no final mesmo não sendo o maior número da ordem crescente, pois forá adicionado por último.
+
+=====================================================================
+
+Aula #16
+
+> Funções II
+- A linguagem JavaScript tem como objetivo ser uma linguagem funcional, ou seja, proporcionada para executar diferentes ações funcionais tidas como funções.
+- Nesta aula será revista as funções mais básicas da linguagem, mas que são fundamentais não só para JavaScript mas para qualquer linguagem.
+- Toda função possui uma chamada, na qual se espera um resultado de um processo na qual irá requisitar, pode ser condicional, periódico, etc.
+- É necessário dentro de uma chamada da função algo chamado "parâmetro", são as circunstâncias na qual a chamada deve ser efetuada dentro de suas especificidades.
+- A ação é quando se leva em conta todas as informações (chamada e parâmetro) e põe em prática, executa essa ordem levando em conta todas as condições específicas.
+- O retorno é o resultado da ação, sob todas as condições que foi envolvida como também a reação disso.
+- Resumindo em outras palavras:
+- Funções são ações executadas assim que são chamadas ou em decorrência de algum evento.
+- Uma função pode receber parâmetros e retornar um resultado.
+- Nas aulas anteriores (especificamente na aula sobre o DOM), não foi aprofundado o retorno ou sequer sobre os parâmetros de uma função.
+- Para especificar um parâmetro:
+
+function ação(/*parâmetro*/) {
+    return res // dentro das chaves é a ação, irá retornar o valor depois de processar o valor do parâmetro dentro da função 
+}
+
+ação(5) // esta é a chamada, o cinco é um parâmetro para a função, na qual será testado esse valor dentro dos parênteces da "function ação()"
+
+- Exemplo que verifica se um número é par ou impar:
+
+function parimp(n) { // a variável "n" vai ser o parâmetro modelo utilizado
+   if (n%2==0) { // para verificar se o número é par, é utilizado o calculo do restante da divisão de 2, todo número par é divisível por 2, se houver sobras dessa divisão, será impar.
+       return 'par' // irá retornar o valor string 'par'
+   } else {
+       return 'impar' // """ 'impar'
+   }
+}
+
+parimp(11) // a chamada para testar o valor de parâmetro "11" para verificar se é número impar ou par (no caso, vai retornar o valor "impar").
+
+- No VSCode, na pasta dos exercícios do curso há vários exercícios explanando várias maneiras de se utilizar as funções explicando cada passo do script.
+- Por ser uma linguagem de funções, neste curso foi explicado só o básico delas, é necessário futuramente se aprofundar no conteúdo e nas várias funcionalidades dele, sendo de suma importância dominar profundamente não só as funções, mas todos os conceitos da linguagem.
+
+=====================================================================
+
+Aula #17
+
+> Próximos Passos (É O FIM?? não...)
+- Na última aula, foi visto sobre a importância de dominar o conceito de função em JS.
+- Neste curso básico, foi ensinado somente o essencial como inserção na modalidade de aprendizagem na linguagem, a linguagem possui um vasto conteúdo imenso para aprender e dominar, nesta aula será discutido sobre um horizonte na qual se deve tomar para aprender conteúdos mais avançados e de suma importân.
+- O que deve ser aprofundado futuramente: (MUITO IMPORTANTE!!!)
+
+HTML e CSS (FUNDAMENTAL)
+functions
+objetos
+modularização
+RegEx
+JSON
+AJAX
+NodeJS
+
+- Nesta aula também é aprofundado os estudos fundamentais de objetos.
+
+> Objetos II
+- Na aula de vetores, foi visto como é possivel colocar diversos valores dentro de uma variável array, sendo cada espaço da variável divisivel por indices (0, 1, 2, 3, 4, etc).
+- É possivel guardar diferentes tipos de valores (strings, numéricos, booleans) dentro de uma variável com colchetes, mas o problema surge quando há a necessidade de fazer operações mais avançadas e esses valores são gravados em índices numéricos e simples, limitando as possibilidades e a diversidade.
+- Existem diferentes maneiras de declarar um objeto em oposição ao exemplo citado acima, como solução para esse eventual problema que pode acontecer infere na declaração ser feita com chaves ("{}") ao invés de colchetes ("[]").
+- Neste tipo de declaração, é possível nomear cada índice criado dentro de uma variável, ex:
+
+let amigo {nome:'José', sexo:'M', peso:85.4, engordar(p){}}
+
+- dentro da variável amigo, está guardado diversos valores que a definem, tanto strings e também numéricos, mas uma novidade desta modalidade é a possibilidade de guardar funcionalidades ({...engordar(p){}}).
+
+
+
+                                                 FIM
+
+
